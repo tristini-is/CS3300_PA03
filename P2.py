@@ -1,5 +1,6 @@
 import numpy as np
 import csv
+import matplotlib.pyplot as plt
 
 pairArray = []
 
@@ -28,6 +29,11 @@ A = np.round(np.dot(np.linalg.inv(XTX),XTY), decimals=1)
 
 print("y ="+str(A[1][0])+"x+"+str(A[0][0]))
 
-#XTX = np.dot(np.transpose(X),X)
+x = np.linspace(-5, 5, 100)
+
+plt.plot(x,A[1][0]*x+A[0][0], label='Line of Best Fit', color='blue', linestyle='-',linewidth=2)
+plt.grid(True)
+plt.show()
+
 
 
